@@ -1,0 +1,138 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Expense Tracker ERD">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1"
+      tooltips="1" connect="1" arrows="1" fold="1"
+      page="1" pageScale="1" pageWidth="1600" pageHeight="900">
+
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- USERS -->
+        <mxCell id="users"
+          value="&lt;b&gt;users&lt;/b&gt;&lt;hr&gt;
+🔑 user_id : int(11)&lt;br&gt;
+openId : varchar(64)&lt;br&gt;
+name : text&lt;br&gt;
+email : varchar(320)&lt;br&gt;
+password : varchar(255)&lt;br&gt;
+loginMethod : varchar(64)&lt;br&gt;
+role : enum('user','admin')&lt;br&gt;
+createdAt : timestamp&lt;br&gt;
+updatedAt : timestamp&lt;br&gt;
+lastSignedIn : timestamp"
+          style="shape=rectangle;html=1;whiteSpace=wrap;rounded=0;strokeWidth=2;fontSize=14;spacing=8;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="620" y="340" width="360" height="260" as="geometry"/>
+        </mxCell>
+
+        <!-- CATEGORIES -->
+        <mxCell id="categories"
+          value="&lt;b&gt;categories&lt;/b&gt;&lt;hr&gt;
+🔑 id : int(11)&lt;br&gt;
+🔗 userId : int(11)&lt;br&gt;
+name : varchar(150)&lt;br&gt;
+icon : varchar(50)&lt;br&gt;
+color : varchar(20)&lt;br&gt;
+description : text&lt;br&gt;
+createdAt : timestamp&lt;br&gt;
+updatedAt : timestamp"
+          style="shape=rectangle;html=1;whiteSpace=wrap;rounded=0;strokeWidth=2;fontSize=14;spacing=8;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="620" y="40" width="360" height="240" as="geometry"/>
+        </mxCell>
+
+        <!-- BUDGETS -->
+        <mxCell id="budgets"
+          value="&lt;b&gt;budgets&lt;/b&gt;&lt;hr&gt;
+🔑 id : int(11)&lt;br&gt;
+🔗 userId : int(11)&lt;br&gt;
+month : tinyint(4)&lt;br&gt;
+year : year(4)&lt;br&gt;
+budgetAmount : decimal(10,2)&lt;br&gt;
+createdAt : timestamp&lt;br&gt;
+updatedAt : timestamp"
+          style="shape=rectangle;html=1;whiteSpace=wrap;rounded=0;strokeWidth=2;fontSize=14;spacing=8;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="80" y="360" width="360" height="220" as="geometry"/>
+        </mxCell>
+
+        <!-- EXPENSES -->
+        <mxCell id="expenses"
+          value="&lt;b&gt;expenses&lt;/b&gt;&lt;hr&gt;
+🔑 id : int(11)&lt;br&gt;
+🔗 userId : int(11)&lt;br&gt;
+🔗 categoryId : int(11)&lt;br&gt;
+amount : decimal(10,2)&lt;br&gt;
+description : text&lt;br&gt;
+expenseDate : date&lt;br&gt;
+createdAt : timestamp&lt;br&gt;
+updatedAt : timestamp"
+          style="shape=rectangle;html=1;whiteSpace=wrap;rounded=0;strokeWidth=2;fontSize=14;spacing=8;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="1160" y="340" width="360" height="250" as="geometry"/>
+        </mxCell>
+
+        <!-- USERS -> CATEGORIES -->
+        <mxCell id="r1"
+          edge="1"
+          parent="1"
+          source="users"
+          target="categories"
+          value="1:N"
+          style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;
+          startArrow=ERone;endArrow=ERmany;
+          startFill=0;endFill=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- USERS -> BUDGETS -->
+        <mxCell id="r2"
+          edge="1"
+          parent="1"
+          source="users"
+          target="budgets"
+          value="1:N"
+          style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;
+          strokeColor=#00AA00;
+          startArrow=ERone;endArrow=ERmany;
+          startFill=0;endFill=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- USERS -> EXPENSES -->
+        <mxCell id="r3"
+          edge="1"
+          parent="1"
+          source="users"
+          target="expenses"
+          value="1:N"
+          style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;
+          strokeColor=#00AA00;
+          startArrow=ERone;endArrow=ERmany;
+          startFill=0;endFill=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- CATEGORIES -> EXPENSES -->
+        <mxCell id="r4"
+          edge="1"
+          parent="1"
+          source="categories"
+          target="expenses"
+          value="1:N"
+          style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;
+          strokeColor=#0000FF;
+          startArrow=ERone;endArrow=ERmany;
+          startFill=0;endFill=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

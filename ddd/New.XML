@@ -1,0 +1,99 @@
+<mxfile>
+  <diagram name="Use Case Diagram">
+    <mxGraphModel grid="1" gridSize="10">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Actor -->
+        <mxCell id="actor" value="User" style="shape=umlActor;" vertex="1" parent="1">
+          <mxGeometry x="40" y="250" width="60" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- System -->
+        <mxCell id="system" value="Expense Management System" style="rounded=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="150" y="50" width="700" height="600" as="geometry"/>
+        </mxCell>
+
+        <!-- Use Cases -->
+        <mxCell id="uc1" value="Register User" style="ellipse;" vertex="1" parent="system">
+          <mxGeometry x="40" y="40" width="140" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc2" value="Log In" style="ellipse;" vertex="1" parent="system">
+          <mxGeometry x="240" y="40" width="140" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc3" value="Log Out" style="ellipse;" vertex="1" parent="system">
+          <mxGeometry x="440" y="40" width="140" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc4" value="Add Category" style="ellipse;" vertex="1" parent="system">
+          <mxGeometry x="40" y="140" width="140" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc5" value="Edit Category" style="ellipse;" vertex="1" parent="system">
+          <mxGeometry x="240" y="140" width="140" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc6" value="Delete Category" style="ellipse;" vertex="1" parent="system">
+          <mxGeometry x="440" y="140" width="140" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc7" value="Add Expense" style="ellipse;" vertex="1" parent="system">
+          <mxGeometry x="40" y="260" width="140" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc8" value="Edit Expense" style="ellipse;" vertex="1" parent="system">
+          <mxGeometry x="240" y="260" width="140" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc9" value="Delete Expense" style="ellipse;" vertex="1" parent="system">
+          <mxGeometry x="440" y="260" width="140" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc10" value="Set Monthly Budget" style="ellipse;" vertex="1" parent="system">
+          <mxGeometry x="40" y="380" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc11" value="View Dashboard & Reports" style="ellipse;" vertex="1" parent="system">
+          <mxGeometry x="260" y="380" width="220" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc12" value="Update Profile" style="ellipse;" vertex="1" parent="system">
+          <mxGeometry x="180" y="500" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Connections -->
+        <mxCell id="e1" edge="1" parent="1" source="actor" target="uc1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e2" edge="1" parent="1" source="actor" target="uc2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e3" edge="1" parent="1" source="actor" target="uc4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e4" edge="1" parent="1" source="actor" target="uc7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e5" edge="1" parent="1" source="actor" target="uc10">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e6" edge="1" parent="1" source="actor" target="uc11">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e7" edge="1" parent="1" source="actor" target="uc12">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

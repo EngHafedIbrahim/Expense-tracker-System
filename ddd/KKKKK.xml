@@ -1,0 +1,107 @@
+<mxfile>
+  <diagram name="Use Case Diagram">
+    <mxGraphModel grid="1" gridSize="10">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Actor -->
+        <mxCell id="actor" value="User" style="shape=umlActor;" vertex="1" parent="1">
+          <mxGeometry x="40" y="250" width="60" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- System -->
+        <mxCell id="system" value="Expense Management System" style="rounded=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="150" y="50" width="900" height="650" as="geometry"/>
+        </mxCell>
+
+        <!-- MAIN USE CASES -->
+        <mxCell id="uc1" value="Register User" style="ellipse;" vertex="1" parent="system">
+          <mxGeometry x="40" y="40" width="150" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc2" value="Log In" style="ellipse;" vertex="1" parent="system">
+          <mxGeometry x="240" y="40" width="150" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc3" value="Log Out" style="ellipse;" vertex="1" parent="system">
+          <mxGeometry x="440" y="40" width="150" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc4" value="Manage Categories" style="ellipse;" vertex="1" parent="system">
+          <mxGeometry x="40" y="140" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc8" value="Manage Expenses" style="ellipse;" vertex="1" parent="system">
+          <mxGeometry x="300" y="140" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc12" value="Set Monthly Budget" style="ellipse;" vertex="1" parent="system">
+          <mxGeometry x="600" y="140" width="200" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc13" value="View Dashboard" style="ellipse;" vertex="1" parent="system">
+          <mxGeometry x="200" y="300" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc15" value="Update Profile" style="ellipse;" vertex="1" parent="system">
+          <mxGeometry x="500" y="300" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- CATEGORY DETAILS -->
+        <mxCell id="uc5" value="Add Category" style="ellipse;dashed=1;" vertex="1" parent="system">
+          <mxGeometry x="40" y="220" width="150" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc6" value="Edit Category" style="ellipse;dashed=1;" vertex="1" parent="system">
+          <mxGeometry x="200" y="220" width="150" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc7" value="Delete Category" style="ellipse;dashed=1;" vertex="1" parent="system">
+          <mxGeometry x="360" y="220" width="150" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- EXPENSE DETAILS -->
+        <mxCell id="uc9" value="Add Expense" style="ellipse;dashed=1;" vertex="1" parent="system">
+          <mxGeometry x="300" y="220" width="150" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc10" value="Edit Expense" style="ellipse;dashed=1;" vertex="1" parent="system">
+          <mxGeometry x="460" y="220" width="150" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc11" value="Delete Expense" style="ellipse;dashed=1;" vertex="1" parent="system">
+          <mxGeometry x="620" y="220" width="150" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- REPORT -->
+        <mxCell id="uc14" value="Generate Reports" style="ellipse;dashed=1;" vertex="1" parent="system">
+          <mxGeometry x="350" y="380" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- ACTOR CONNECTIONS -->
+        <mxCell edge="1" parent="1" source="actor" target="uc1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" parent="1" source="actor" target="uc2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" parent="1" source="actor" target="uc3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" parent="1" source="actor" target="uc4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" parent="1" source="actor" target="uc8"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" parent="1" source="actor" target="uc12"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" parent="1" source="actor" target="uc13"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" parent="1" source="actor" target="uc15"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- INCLUDE -->
+        <mxCell edge="1" value="&lt;&lt;include&gt;&gt;" style="dashed=1;" parent="1" source="uc4" target="uc5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" value="&lt;&lt;include&gt;&gt;" style="dashed=1;" parent="1" source="uc4" target="uc6"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" value="&lt;&lt;include&gt;&gt;" style="dashed=1;" parent="1" source="uc4" target="uc7"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell edge="1" value="&lt;&lt;include&gt;&gt;" style="dashed=1;" parent="1" source="uc8" target="uc9"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" value="&lt;&lt;include&gt;&gt;" style="dashed=1;" parent="1" source="uc8" target="uc10"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" value="&lt;&lt;include&gt;&gt;" style="dashed=1;" parent="1" source="uc8" target="uc11"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- EXTEND -->
+        <mxCell edge="1" value="&lt;&lt;extend&gt;&gt;" style="dashed=1;" parent="1" source="uc13" target="uc14"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1"
+    xmlns:xmi="http://schema.omg.org/spec/XMI/2.1"
+    xmlns:uml="http://www.omg.org/spec/UML/2.0">
+  <packagedElement xmi:type="uml:Package" xmi:id="pkg1" name="ExpenseManagementSystem">
+
+    <!-- UC-001: Register User -->
+    <packagedElement xmi:type="uml:Interaction" xmi:id="UC001" name="Register User">
+      <lifeline xmi:id="uc001_l1" name="User"/>
+      <lifeline xmi:id="uc001_l2" name="Registration UI"/>
+      <lifeline xmi:id="uc001_l3" name="Auth Controller"/>
+      <lifeline xmi:id="uc001_l4" name="User Database"/>
+
+      <message xmi:id="uc001_m1" name="Open Registration Page" messageSort="synchCall"/>
+      <message xmi:id="uc001_m2" name="Display Registration Form" messageSort="reply"/>
+      <message xmi:id="uc001_m3" name="Submit Registration Details" messageSort="synchCall"/>
+      <message xmi:id="uc001_m4" name="Validate Required Fields" messageSort="synchCall"/>
+
+      <combinedFragment xmi:id="uc001_cf1" interactionOperator="alt">
+        <operand xmi:id="uc001_op1" name="Missing Fields">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="uc001_g1" name="fields empty"/>
+          <message xmi:id="uc001_m5" name="Show 'All fields are required'" messageSort="reply"/>
+        </operand>
+        <operand xmi:id="uc001_op2" name="Passwords Mismatch">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="uc001_g2" name="password != confirmPassword"/>
+          <message xmi:id="uc001_m6" name="Show 'Passwords do not match'" messageSort="reply"/>
+        </operand>
+        <operand xmi:id="uc001_op3" name="Email Already Exists">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="uc001_g3" name="email exists"/>
+          <message xmi:id="uc001_m7" name="Check Existing Email" messageSort="synchCall"/>
+          <message xmi:id="uc001_m8" name="Show 'Email already registered'" messageSort="reply"/>
+        </operand>
+        <operand xmi:id="uc001_op4" name="Successful Registration">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="uc001_g4" name="valid data"/>
+          <message xmi:id="uc001_m9" name="Hash Password" messageSort="synchCall"/>
+          <message xmi:id="uc001_m10" name="Create User Account" messageSort="synchCall"/>
+          <message xmi:id="uc001_m11" name="Registration Successful" messageSort="reply"/>
+          <message xmi:id="uc001_m12" name="Redirect to Login" messageSort="reply"/>
+        </operand>
+      </combinedFragment>
+    </packagedElement>
+
+    <!-- UC-002: Log In -->
+    <packagedElement xmi:type="uml:Interaction" xmi:id="UC002" name="Log In">
+      <lifeline xmi:id="uc002_l1" name="User"/>
+      <lifeline xmi:id="uc002_l2" name="Login UI"/>
+      <lifeline xmi:id="uc002_l3" name="Auth Controller"/>
+      <lifeline xmi:id="uc002_l4" name="User Database"/>
+
+      <message xmi:id="uc002_m1" name="Open Login Page" messageSort="synchCall"/>
+      <message xmi:id="uc002_m2" name="Enter Email and Password" messageSort="synchCall"/>
+      <message xmi:id="uc002_m3" name="Validate Input" messageSort="synchCall"/>
+
+      <combinedFragment xmi:id="uc002_cf1" interactionOperator="alt">
+        <operand xmi:id="uc002_op1">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="uc002_g1" name="fields empty"/>
+          <message xmi:id="uc002_m4" name="Show 'Fill all fields'" messageSort="reply"/>
+        </operand>
+        <operand xmi:id="uc002_op2">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="uc002_g2" name="invalid credentials"/>
+          <message xmi:id="uc002_m5" name="Fetch User Record" messageSort="synchCall"/>
+          <message xmi:id="uc002_m6" name="Show 'Invalid email or password'" messageSort="reply"/>
+        </operand>
+        <operand xmi:id="uc002_op3">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="uc002_g3" name="valid credentials"/>
+          <message xmi:id="uc002_m7" name="Verify Password" messageSort="synchCall"/>
+          <message xmi:id="uc002_m8" name="Create Session" messageSort="synchCall"/>
+          <message xmi:id="uc002_m9" name="Redirect to Dashboard" messageSort="reply"/>
+        </operand>
+      </combinedFragment>
+    </packagedElement>
+
+    <!-- UC-003: Log Out -->
+    <packagedElement xmi:type="uml:Interaction" xmi:id="UC003" name="Log Out">
+      <lifeline xmi:id="uc003_l1" name="User"/>
+      <lifeline xmi:id="uc003_l2" name="System"/>
+      <message xmi:id="uc003_m1" name="Click Logout" messageSort="synchCall"/>
+      <message xmi:id="uc003_m2" name="Destroy Session" messageSort="synchCall"/>
+      <message xmi:id="uc003_m3" name="Redirect to Login" messageSort="reply"/>
+    </packagedElement>
+
+    <!-- UC-004/005/006: Manage Categories -->
+    <packagedElement xmi:type="uml:Interaction" xmi:id="UC004_006" name="Manage Expense Categories">
+      <lifeline xmi:id="cat_l1" name="User"/>
+      <lifeline xmi:id="cat_l2" name="Category UI"/>
+      <lifeline xmi:id="cat_l3" name="Category Controller"/>
+      <lifeline xmi:id="cat_l4" name="Category Database"/>
+
+      <message xmi:id="cat_m1" name="Select Category Operation" messageSort="synchCall"/>
+
+      <combinedFragment xmi:id="cat_cf1" interactionOperator="alt">
+        <operand xmi:id="cat_op1" name="Add Category">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="cat_g1" name="add"/>
+          <message xmi:id="cat_m2" name="Enter Category Name" messageSort="synchCall"/>
+          <message xmi:id="cat_m3" name="Validate Name" messageSort="synchCall"/>
+          <message xmi:id="cat_m4" name="Insert Category" messageSort="synchCall"/>
+          <message xmi:id="cat_m5" name="Category Added" messageSort="reply"/>
+        </operand>
+        <operand xmi:id="cat_op2" name="Edit Category">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="cat_g2" name="edit"/>
+          <message xmi:id="cat_m6" name="Load Category" messageSort="synchCall"/>
+          <message xmi:id="cat_m7" name="Update Category Name" messageSort="synchCall"/>
+          <message xmi:id="cat_m8" name="Save Changes" messageSort="synchCall"/>
+          <message xmi:id="cat_m9" name="Category Updated" messageSort="reply"/>
+        </operand>
+        <operand xmi:id="cat_op3" name="Delete Category">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="cat_g3" name="delete"/>
+          <message xmi:id="cat_m10" name="Request Delete" messageSort="synchCall"/>
+          <combinedFragment xmi:id="cat_cf2" interactionOperator="alt">
+            <operand xmi:id="cat_op31">
+              <guard xmi:type="uml:InteractionConstraint" xmi:id="cat_g31" name="confirmed and no linked expenses"/>
+              <message xmi:id="cat_m11" name="Delete Category" messageSort="synchCall"/>
+              <message xmi:id="cat_m12" name="Category Deleted" messageSort="reply"/>
+            </operand>
+            <operand xmi:id="cat_op32">
+              <guard xmi:type="uml:InteractionConstraint" xmi:id="cat_g32" name="linked expenses exist"/>
+              <message xmi:id="cat_m13" name="Show 'Cannot delete category in use'" messageSort="reply"/>
+            </operand>
+            <operand xmi:id="cat_op33">
+              <guard xmi:type="uml:InteractionConstraint" xmi:id="cat_g33" name="user cancels"/>
+              <message xmi:id="cat_m14" name="Cancel Deletion" messageSort="reply"/>
+            </operand>
+          </combinedFragment>
+        </operand>
+      </combinedFragment>
+    </packagedElement>
+
+    <!-- UC-007/008/009: Manage Expenses -->
+    <packagedElement xmi:type="uml:Interaction" xmi:id="UC007_009" name="Manage Expenses">
+      <lifeline xmi:id="exp_l1" name="User"/>
+      <lifeline xmi:id="exp_l2" name="Expense UI"/>
+      <lifeline xmi:id="exp_l3" name="Expense Controller"/>
+      <lifeline xmi:id="exp_l4" name="Expense Database"/>
+
+      <message xmi:id="exp_m1" name="Select Expense Operation" messageSort="synchCall"/>
+
+      <combinedFragment xmi:id="exp_cf1" interactionOperator="alt">
+        <operand xmi:id="exp_op1" name="Add Expense">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="exp_g1" name="add"/>
+          <message xmi:id="exp_m2" name="Enter Expense Details" messageSort="synchCall"/>
+          <message xmi:id="exp_m3" name="Validate Expense Data" messageSort="synchCall"/>
+          <message xmi:id="exp_m4" name="Save Expense" messageSort="synchCall"/>
+          <message xmi:id="exp_m5" name="Expense Added" messageSort="reply"/>
+        </operand>
+        <operand xmi:id="exp_op2" name="Edit Expense">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="exp_g2" name="edit"/>
+          <message xmi:id="exp_m6" name="Load Expense Details" messageSort="synchCall"/>
+          <message xmi:id="exp_m7" name="Update Expense" messageSort="synchCall"/>
+          <message xmi:id="exp_m8" name="Save Updated Expense" messageSort="synchCall"/>
+          <message xmi:id="exp_m9" name="Expense Updated" messageSort="reply"/>
+        </operand>
+        <operand xmi:id="exp_op3" name="Delete Expense">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="exp_g3" name="delete"/>
+          <message xmi:id="exp_m10" name="Request Delete Confirmation" messageSort="synchCall"/>
+          <combinedFragment xmi:id="exp_cf2" interactionOperator="alt">
+            <operand xmi:id="exp_op31">
+              <guard xmi:type="uml:InteractionConstraint" xmi:id="exp_g31" name="confirmed"/>
+              <message xmi:id="exp_m11" name="Delete Expense" messageSort="synchCall"/>
+              <message xmi:id="exp_m12" name="Expense Deleted" messageSort="reply"/>
+            </operand>
+            <operand xmi:id="exp_op32">
+              <guard xmi:type="uml:InteractionConstraint" xmi:id="exp_g32" name="cancelled"/>
+              <message xmi:id="exp_m13" name="Deletion Cancelled" messageSort="reply"/>
+            </operand>
+          </combinedFragment>
+        </operand>
+      </combinedFragment>
+    </packagedElement>
+
+    <!-- UC-010: Set Monthly Budget -->
+    <packagedElement xmi:type="uml:Interaction" xmi:id="UC010" name="Set Monthly Budget">
+      <lifeline xmi:id="bud_l1" name="User"/>
+      <lifeline xmi:id="bud_l2" name="Budget UI"/>
+      <lifeline xmi:id="bud_l3" name="Budget Controller"/>
+      <lifeline xmi:id="bud_l4" name="Budget Database"/>
+
+      <message xmi:id="bud_m1" name="Enter Month, Year, Amount" messageSort="synchCall"/>
+      <message xmi:id="bud_m2" name="Validate Budget Data" messageSort="synchCall"/>
+
+      <combinedFragment xmi:id="bud_cf1" interactionOperator="alt">
+        <operand xmi:id="bud_op1">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="bud_g1" name="invalid input"/>
+          <message xmi:id="bud_m3" name="Show Validation Error" messageSort="reply"/>
+        </operand>
+        <operand xmi:id="bud_op2">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="bud_g2" name="budget exists"/>
+          <message xmi:id="bud_m4" name="Update Existing Budget" messageSort="synchCall"/>
+          <message xmi:id="bud_m5" name="Budget Updated" messageSort="reply"/>
+        </operand>
+        <operand xmi:id="bud_op3">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="bud_g3" name="new budget"/>
+          <message xmi:id="bud_m6" name="Create Budget Record" messageSort="synchCall"/>
+          <message xmi:id="bud_m7" name="Budget Saved" messageSort="reply"/>
+        </operand>
+      </combinedFragment>
+    </packagedElement>
+
+    <!-- UC-011: Dashboard and Reports -->
+    <packagedElement xmi:type="uml:Interaction" xmi:id="UC011" name="View Dashboard and Reports">
+      <lifeline xmi:id="dash_l1" name="User"/>
+      <lifeline xmi:id="dash_l2" name="Dashboard UI"/>
+      <lifeline xmi:id="dash_l3" name="Report Controller"/>
+      <lifeline xmi:id="dash_l4" name="Analytics Service"/>
+      <lifeline xmi:id="dash_l5" name="Database"/>
+
+      <message xmi:id="dash_m1" name="Request Dashboard" messageSort="synchCall"/>
+      <message xmi:id="dash_m2" name="Retrieve Expenses, Budgets, Categories" messageSort="synchCall"/>
+      <message xmi:id="dash_m3" name="Calculate Metrics" messageSort="synchCall"/>
+      <message xmi:id="dash_m4" name="Generate Charts" messageSort="synchCall"/>
+
+      <combinedFragment xmi:id="dash_cf1" interactionOperator="alt">
+        <operand xmi:id="dash_op1">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="dash_g1" name="no budget set"/>
+          <message xmi:id="dash_m5" name="Display 'No budget set'" messageSort="reply"/>
+        </operand>
+        <operand xmi:id="dash_op2">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="dash_g2" name="no expenses found"/>
+          <message xmi:id="dash_m6" name="Display 'No expense data available'" messageSort="reply"/>
+        </operand>
+        <operand xmi:id="dash_op3">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="dash_g3" name="data available"/>
+          <message xmi:id="dash_m7" name="Display Dashboard Summary" messageSort="reply"/>
+          <message xmi:id="dash_m8" name="Print Report (optional)" messageSort="synchCall"/>
+        </operand>
+      </combinedFragment>
+    </packagedElement>
+
+    <!-- UC-012: Update Profile -->
+    <packagedElement xmi:type="uml:Interaction" xmi:id="UC012" name="Update Profile">
+      <lifeline xmi:id="pro_l1" name="User"/>
+      <lifeline xmi:id="pro_l2" name="Profile UI"/>
+      <lifeline xmi:id="pro_l3" name="Profile Controller"/>
+      <lifeline xmi:id="pro_l4" name="User Database"/>
+
+      <message xmi:id="pro_m1" name="Open Profile Page" messageSort="synchCall"/>
+      <message xmi:id="pro_m2" name="Submit Updated Details" messageSort="synchCall"/>
+      <message xmi:id="pro_m3" name="Validate Input" messageSort="synchCall"/>
+
+      <combinedFragment xmi:id="pro_cf1" interactionOperator="alt">
+        <operand xmi:id="pro_op1">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="pro_g1" name="invalid data or duplicate email"/>
+          <message xmi:id="pro_m4" name="Display Validation Error" messageSort="reply"/>
+        </operand>
+        <operand xmi:id="pro_op2">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="pro_g2" name="password change requested"/>
+          <message xmi:id="pro_m5" name="Verify Current Password" messageSort="synchCall"/>
+          <message xmi:id="pro_m6" name="Hash New Password" messageSort="synchCall"/>
+          <message xmi:id="pro_m7" name="Update Profile and Password" messageSort="synchCall"/>
+          <message xmi:id="pro_m8" name="Refresh Session" messageSort="synchCall"/>
+          <message xmi:id="pro_m9" name="Profile Updated" messageSort="reply"/>
+        </operand>
+        <operand xmi:id="pro_op3">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="pro_g3" name="profile only"/>
+          <message xmi:id="pro_m10" name="Update User Details" messageSort="synchCall"/>
+          <message xmi:id="pro_m11" name="Refresh Session" messageSort="synchCall"/>
+          <message xmi:id="pro_m12" name="Profile Updated" messageSort="reply"/>
+        </operand>
+      </combinedFragment>
+    </packagedElement>
+
+  </packagedElement>
+</uml:Model>

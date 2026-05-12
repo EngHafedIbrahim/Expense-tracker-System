@@ -1,0 +1,66 @@
+<mxfile host="app.diagrams.net" version="24.7.17">
+  <diagram id="class-diagram" name="Expense Management System - Class Diagram">
+    <mxGraphModel dx="1600" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="user" value="&lt;b&gt;User&lt;/b&gt;&lt;hr/&gt;+ user_id: int&lt;br/&gt;+ full_name: string&lt;br/&gt;+ email: string&lt;br/&gt;+ password: string&lt;br/&gt;+ created_at: datetime&lt;hr/&gt;+ register()&lt;br/&gt;+ login()&lt;br/&gt;+ logout()&lt;br/&gt;+ updateProfile()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="260" height="260" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="category" value="&lt;b&gt;Category&lt;/b&gt;&lt;hr/&gt;+ category_id: int&lt;br/&gt;+ user_id: int&lt;br/&gt;+ name: string&lt;br/&gt;+ created_at: datetime&lt;hr/&gt;+ addCategory()&lt;br/&gt;+ updateCategory()&lt;br/&gt;+ deleteCategory()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="40" width="260" height="220" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="expense" value="&lt;b&gt;Expense&lt;/b&gt;&lt;hr/&gt;+ expense_id: int&lt;br/&gt;+ user_id: int&lt;br/&gt;+ category_id: int&lt;br/&gt;+ amount: decimal&lt;br/&gt;+ description: text&lt;br/&gt;+ expense_date: date&lt;br/&gt;+ created_at: datetime&lt;hr/&gt;+ addExpense()&lt;br/&gt;+ updateExpense()&lt;br/&gt;+ deleteExpense()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="40" width="300" height="300" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="budget" value="&lt;b&gt;Budget&lt;/b&gt;&lt;hr/&gt;+ budget_id: int&lt;br/&gt;+ user_id: int&lt;br/&gt;+ month: int&lt;br/&gt;+ year: int&lt;br/&gt;+ amount: decimal&lt;br/&gt;+ created_at: datetime&lt;hr/&gt;+ setBudget()&lt;br/&gt;+ updateBudget()&lt;br/&gt;+ getRemainingBudget()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="380" width="280" height="260" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="report" value="&lt;b&gt;Report&lt;/b&gt;&lt;hr/&gt;+ report_id: int&lt;br/&gt;+ user_id: int&lt;br/&gt;+ month: int&lt;br/&gt;+ year: int&lt;br/&gt;+ generated_at: datetime&lt;hr/&gt;+ generateMonthlyReport()&lt;br/&gt;+ printReport()&lt;br/&gt;+ exportReport()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="380" width="280" height="240" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="dashboard" value="&lt;b&gt;Dashboard&lt;/b&gt;&lt;hr/&gt;+ totalExpenses: decimal&lt;br/&gt;+ monthlyBudget: decimal&lt;br/&gt;+ remainingBudget: decimal&lt;br/&gt;+ spendingPercentage: float&lt;hr/&gt;+ viewSummary()&lt;br/&gt;+ comparePreviousMonth()&lt;br/&gt;+ displayCharts()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="400" width="300" height="240" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel1" value="1..*" style="endArrow=none;html=1;" edge="1" parent="1" source="user" target="category">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel2" value="1..*" style="endArrow=none;html=1;" edge="1" parent="1" source="user" target="expense">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel3" value="1..*" style="endArrow=none;html=1;" edge="1" parent="1" source="category" target="expense">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel4" value="1..*" style="endArrow=none;html=1;" edge="1" parent="1" source="user" target="budget">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel5" value="generates" style="endArrow=open;html=1;" edge="1" parent="1" source="user" target="report">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel6" value="uses" style="endArrow=open;html=1;dashed=1;" edge="1" parent="1" source="dashboard" target="expense">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel7" value="uses" style="endArrow=open;html=1;dashed=1;" edge="1" parent="1" source="dashboard" target="budget">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel8" value="summarizes" style="endArrow=open;html=1;dashed=1;" edge="1" parent="1" source="report" target="expense">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

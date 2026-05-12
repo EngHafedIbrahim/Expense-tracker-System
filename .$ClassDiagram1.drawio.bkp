@@ -1,0 +1,68 @@
+<mxfile host="Electron">
+  <diagram name="Expense Management System - Class Diagram" id="PSoB0BPeR24b2SF8aXOL">
+    <mxGraphModel dx="1355" dy="1915" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hdxJ76mu4dXvfTBPQ8eQ-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;shadow=1;glass=1;spacing=6;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" value="&lt;b&gt;User&lt;/b&gt;&#xa;──────────────&#xa;+ id: int&#xa;+ full_name: varchar(150)&#xa;+ email: varchar(150)&#xa;+ password: varchar(255)&#xa;+ created_at: timestamp&#xa;──────────────&#xa;+ register()&#xa;+ login()&#xa;+ updateProfile()&#xa;+ logout()" vertex="1">
+          <mxGeometry height="210" width="260" x="80" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="hdxJ76mu4dXvfTBPQ8eQ-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;shadow=1;glass=1;spacing=6;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" value="&lt;b&gt;Category&lt;/b&gt;&#xa;──────────────&#xa;+ id: int&#xa;+ name: varchar(150)&#xa;+ created_at: timestamp&#xa;──────────────&#xa;+ addCategory()&#xa;+ updateCategory()&#xa;+ deleteCategory()" vertex="1">
+          <mxGeometry height="190" width="260" x="1010" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="hdxJ76mu4dXvfTBPQ8eQ-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;shadow=1;glass=1;spacing=6;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" value="&lt;b&gt;Expense&lt;/b&gt;&#xa;──────────────&#xa;+ id: int&#xa;+ user_id: int&#xa;+ category_id: int&#xa;+ amount: decimal(10,2)&#xa;+ description: varchar(255)&#xa;+ expense_date: date&#xa;+ created_at: timestamp&#xa;──────────────&#xa;+ addExpense()&#xa;+ updateExpense()&#xa;+ deleteExpense()&#xa;+ getExpenses()" vertex="1">
+          <mxGeometry height="250" width="345" x="540" y="-10" as="geometry" />
+        </mxCell>
+        <mxCell id="hdxJ76mu4dXvfTBPQ8eQ-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;shadow=1;glass=1;spacing=6;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" value="&lt;b&gt;Budget&lt;/b&gt;&#xa;──────────────&#xa;+ id: int&#xa;+ user_id: int&#xa;+ month: tinyint&#xa;+ year: year&#xa;+ budget_amount: decimal(10,2)&#xa;+ created_at: timestamp&#xa;──────────────&#xa;+ setBudget()&#xa;+ updateBudget()&#xa;+ calculateRemaining()" vertex="1">
+          <mxGeometry height="220" width="290" x="360" y="-280" as="geometry" />
+        </mxCell>
+        <mxCell id="hdxJ76mu4dXvfTBPQ8eQ-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;shadow=1;glass=1;spacing=6;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" value="&lt;b&gt;Report&lt;/b&gt;&#xa;──────────────&#xa;+ reportId: int&#xa;+ month: int&#xa;+ year: int&#xa;+ totalExpenses: decimal&#xa;+ remainingBudget: decimal&#xa;──────────────&#xa;+ generateReport()&#xa;+ generateChart()&#xa;+ printReport()" vertex="1">
+          <mxGeometry height="240" width="270" x="885" y="-270" as="geometry" />
+        </mxCell>
+        <mxCell id="hdxJ76mu4dXvfTBPQ8eQ-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;shadow=1;glass=1;spacing=6;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" value="&lt;b&gt;Notification&lt;/b&gt;&#xa;──────────────&#xa;+ id: int&#xa;+ message: text&#xa;+ created_at: timestamp&#xa;+ status: boolean&#xa;──────────────&#xa;+ sendAlert()&#xa;+ markAsRead()" vertex="1">
+          <mxGeometry height="170" width="260" x="80" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="hdxJ76mu4dXvfTBPQ8eQ-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;shadow=1;glass=1;spacing=6;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" value="&lt;b&gt;RecurringExpense&lt;/b&gt;&#xa;──────────────&#xa;+ id: int&#xa;+ frequency: varchar(50)&#xa;+ next_due_date: date&#xa;+ active: boolean&#xa;──────────────&#xa;+ scheduleExpense()&#xa;+ generateExpense()&#xa;+ disable()" vertex="1">
+          <mxGeometry height="190" width="300" x="562.5" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="hdxJ76mu4dXvfTBPQ8eQ-8" edge="1" parent="1" style="endArrow=diamond;endFill=1;html=1;strokeWidth=2;fillColor=#e51400;strokeColor=#FFFFFF;" value="1..*">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="340" />
+            </Array>
+            <mxPoint x="350" y="350" as="sourcePoint" />
+            <mxPoint x="740" y="244" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hdxJ76mu4dXvfTBPQ8eQ-9" edge="1" parent="1" source="hdxJ76mu4dXvfTBPQ8eQ-2" style="endArrow=none;html=1;strokeWidth=2;fillColor=#e51400;strokeColor=#FFFFFF;entryX=0.995;entryY=0.907;entryDx=0;entryDy=0;entryPerimeter=0;" target="hdxJ76mu4dXvfTBPQ8eQ-3" value="1..*">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hdxJ76mu4dXvfTBPQ8eQ-10" edge="1" parent="1" source="hdxJ76mu4dXvfTBPQ8eQ-1" style="endArrow=diamond;endFill=1;html=1;strokeWidth=2;fillColor=#e51400;strokeColor=#FFFFFF;" target="hdxJ76mu4dXvfTBPQ8eQ-4" value="1..*">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hdxJ76mu4dXvfTBPQ8eQ-11" edge="1" parent="1" source="hdxJ76mu4dXvfTBPQ8eQ-3" style="endArrow=open;html=1;dashed=1;strokeWidth=2;fillColor=#e51400;strokeColor=#FFFFFF;" target="hdxJ76mu4dXvfTBPQ8eQ-5" value="generates">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1030" y="115" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hdxJ76mu4dXvfTBPQ8eQ-12" edge="1" parent="1" source="hdxJ76mu4dXvfTBPQ8eQ-4" style="endArrow=open;html=1;dashed=1;strokeWidth=2;fillColor=#e51400;strokeColor=#FFFFFF;exitX=0.989;exitY=0.317;exitDx=0;exitDy=0;exitPerimeter=0;" target="hdxJ76mu4dXvfTBPQ8eQ-5" value="uses">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="690.0000000000005" y="-289.99684210526334" as="sourcePoint" />
+            <mxPoint x="1250" y="-231.0494736842104" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hdxJ76mu4dXvfTBPQ8eQ-13" edge="1" parent="1" source="hdxJ76mu4dXvfTBPQ8eQ-1" style="endArrow=open;html=1;strokeWidth=2;fillColor=#e51400;strokeColor=#FFFFFF;" target="hdxJ76mu4dXvfTBPQ8eQ-6" value="receives">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hdxJ76mu4dXvfTBPQ8eQ-14" edge="1" parent="1" source="hdxJ76mu4dXvfTBPQ8eQ-7" style="endArrow=open;html=1;strokeWidth=2;fillColor=#e51400;strokeColor=#FFFFFF;" target="hdxJ76mu4dXvfTBPQ8eQ-3" value="creates">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hdxJ76mu4dXvfTBPQ8eQ-15" edge="1" parent="1" source="hdxJ76mu4dXvfTBPQ8eQ-1" style="endArrow=diamond;endFill=1;html=1;strokeWidth=2;fillColor=#e51400;strokeColor=#FFFFFF;" target="hdxJ76mu4dXvfTBPQ8eQ-7" value="owns">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

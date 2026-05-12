@@ -1,0 +1,75 @@
+<mxfile host="app.diagrams.net" version="24.7.17">
+  <diagram id="expense-sequence" name="Expense Management System - Complete Sequence Diagram">
+    <mxGraphModel dx="1600" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="3200" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="user" value="User" style="shape=umlLifeline;perimeter=lifelinePerimeter;html=1;container=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="120" height="3000" as="geometry"/>
+        </mxCell>
+        <mxCell id="ui" value="Web Interface" style="shape=umlLifeline;perimeter=lifelinePerimeter;html=1;container=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="40" width="150" height="3000" as="geometry"/>
+        </mxCell>
+        <mxCell id="ctrl" value="Application Controller" style="shape=umlLifeline;perimeter=lifelinePerimeter;html=1;container=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="40" width="180" height="3000" as="geometry"/>
+        </mxCell>
+        <mxCell id="srv" value="Business Service" style="shape=umlLifeline;perimeter=lifelinePerimeter;html=1;container=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="40" width="170" height="3000" as="geometry"/>
+        </mxCell>
+        <mxCell id="db" value="Database" style="shape=umlLifeline;perimeter=lifelinePerimeter;html=1;container=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="40" width="140" height="3000" as="geometry"/>
+        </mxCell>
+
+        <!-- Login -->
+        <mxCell id="m1" value="1. Enter credentials" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;" edge="1" parent="1" source="user" target="ui"><mxGeometry relative="1" as="geometry"><mxPoint x="160" y="140" as="sourcePoint"/><mxPoint x="240" y="140" as="targetPoint"/></mxGeometry></mxCell>
+        <mxCell id="m2" value="2. Submit login()" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;" edge="1" parent="1" source="ui" target="ctrl"><mxGeometry relative="1" as="geometry"><mxPoint x="390" y="200" as="sourcePoint"/><mxPoint x="470" y="200" as="targetPoint"/></mxGeometry></mxCell>
+        <mxCell id="m3" value="3. Authenticate user()" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;" edge="1" parent="1" source="ctrl" target="srv"><mxGeometry relative="1" as="geometry"><mxPoint x="650" y="260" as="sourcePoint"/><mxPoint x="750" y="260" as="targetPoint"/></mxGeometry></mxCell>
+        <mxCell id="m4" value="4. Get user by email" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;" edge="1" parent="1" source="srv" target="db"><mxGeometry relative="1" as="geometry"><mxPoint x="920" y="320" as="sourcePoint"/><mxPoint x="1010" y="320" as="targetPoint"/></mxGeometry></mxCell>
+        <mxCell id="m5" value="5. User record" style="endArrow=open;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;" edge="1" parent="1" source="db" target="srv"><mxGeometry relative="1" as="geometry"><mxPoint x="1010" y="380" as="sourcePoint"/><mxPoint x="920" y="380" as="targetPoint"/></mxGeometry></mxCell>
+        <mxCell id="m6" value="6. Authentication success" style="endArrow=open;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="srv" target="ctrl"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m7" value="7. Display dashboard" style="endArrow=open;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="ctrl" target="ui"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Add Expense -->
+        <mxCell id="m8" value="8. Enter expense details" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="user" target="ui"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m9" value="9. Submit expense()" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="ui" target="ctrl"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m10" value="10. Validate expense" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="ctrl" target="srv"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m11" value="11. Save expense" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="srv" target="db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m12" value="12. Save confirmation" style="endArrow=open;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="db" target="srv"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m13" value="13. Expense added successfully" style="endArrow=open;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="srv" target="ui"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Budget -->
+        <mxCell id="m14" value="14. Set monthly budget" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="user" target="ui"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m15" value="15. Submit budget()" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="ui" target="ctrl"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m16" value="16. Process budget" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="ctrl" target="srv"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m17" value="17. Save/update budget" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="srv" target="db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m18" value="18. Budget saved" style="endArrow=open;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="db" target="srv"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Dashboard -->
+        <mxCell id="m19" value="19. Request dashboard" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="user" target="ui"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m20" value="20. Fetch dashboard data" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="ui" target="ctrl"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m21" value="21. Generate analytics" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="ctrl" target="srv"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m22" value="22. Retrieve expenses & budget" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="srv" target="db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m23" value="23. Data returned" style="endArrow=open;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="db" target="srv"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m24" value="24. Build charts and KPIs" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="srv" target="srv"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m25" value="25. Dashboard model" style="endArrow=open;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="srv" target="ctrl"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m26" value="26. Render dashboard" style="endArrow=open;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="ctrl" target="ui"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m27" value="27. Display reports" style="endArrow=open;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="ui" target="user"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Export Report -->
+        <mxCell id="m28" value="28. Export report" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="user" target="ui"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m29" value="29. Generate PDF/Excel" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="ui" target="ctrl"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m30" value="30. Create export file" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="ctrl" target="srv"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m31" value="31. Download file" style="endArrow=open;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="srv" target="user"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Logout -->
+        <mxCell id="m32" value="32. Click logout" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="user" target="ui"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m33" value="33. Logout request" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="ui" target="ctrl"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m34" value="34. Terminate session" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="ctrl" target="srv"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m35" value="35. Clear session/token" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="srv" target="db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m36" value="36. Logout successful" style="endArrow=open;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="srv" target="ui"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="m37" value="37. Redirect to login" style="endArrow=open;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="ui" target="user"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

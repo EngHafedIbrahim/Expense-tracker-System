@@ -1,0 +1,113 @@
+<mxfile host="app.diagrams.net" version="24.7.17">
+  <diagram id="activity-diagram" name="Expense Management System - Activity Diagram">
+    <mxGraphModel dx="1600" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2339" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Start -->
+        <mxCell id="start" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#1f2937;strokeColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="760" y="40" width="40" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Activities -->
+        <mxCell id="a1" value="Open Application" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="110" width="260" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="d1" value="Registered User?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#d97706;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="210" width="160" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="a2" value="Register Account" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;" vertex="1" parent="1">
+          <mxGeometry x="360" y="230" width="220" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="a3" value="Log In" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="670" y="360" width="220" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="d2" value="Credentials Valid?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#d97706;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="460" width="160" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="a4" value="Display Error Message" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#dc2626;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="480" width="240" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="a5" value="Show Dashboard" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4f46e5;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="610" width="240" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="d3" value="Select Function" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#d97706;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="720" width="160" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="f1" value="Manage Categories" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e8ff;strokeColor=#9333ea;" vertex="1" parent="1">
+          <mxGeometry x="80" y="900" width="220" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="f2" value="Manage Expenses" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;" vertex="1" parent="1">
+          <mxGeometry x="360" y="900" width="220" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="f3" value="Set Monthly Budget" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="640" y="900" width="220" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="f4" value="View Reports &amp; Charts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce7f3;strokeColor=#db2777;" vertex="1" parent="1">
+          <mxGeometry x="920" y="900" width="240" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="f5" value="Update Profile" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#ea580c;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="900" width="220" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="merge" value="Return to Dashboard" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e5e7eb;strokeColor=#6b7280;" vertex="1" parent="1">
+          <mxGeometry x="650" y="1060" width="260" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="d4" value="Log Out?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#d97706;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="1170" width="160" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="a6" value="Destroy Session &amp; Redirect to Login" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#dc2626;" vertex="1" parent="1">
+          <mxGeometry x="610" y="1320" width="340" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="end" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#111827;strokeColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="760" y="1430" width="40" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Connectors -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="start" target="a1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="a1" target="d1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" value="No" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="d1" target="a2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" value="Yes" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="d1" target="a3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="a2" target="a3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="a3" target="d2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" value="No" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="d2" target="a4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="a4" target="a3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e9" value="Yes" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="d2" target="a5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="a5" target="d3"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="e11" value="Categories" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="d3" target="f1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e12" value="Expenses" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="d3" target="f2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e13" value="Budget" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="d3" target="f3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e14" value="Reports" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="d3" target="f4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e15" value="Profile" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="d3" target="f5"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="e16" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="f1" target="merge"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e17" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="f2" target="merge"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e18" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="f3" target="merge"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e19" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="f4" target="merge"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e20" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="f5" target="merge"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="e21" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="merge" target="d4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e22" value="No" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="d4" target="a5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e23" value="Yes" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="d4" target="a6"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e24" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="a6" target="end"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

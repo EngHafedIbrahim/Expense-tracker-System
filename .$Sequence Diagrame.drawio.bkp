@@ -1,0 +1,208 @@
+<mxfile host="Electron">
+  <diagram name="Login Sequence Diagram" id="IT6NAkDoC_XDFaQMB2TN">
+    <mxGraphModel dx="1563" dy="940" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-125" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;dropTarget=0;fillColor=#1ba1e2;strokeColor=#006EAF;fontStyle=0;fontColor=#ffffff;" value="User" vertex="1">
+          <mxGeometry height="1900" width="120" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-126" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;dropTarget=0;fillColor=#6a00ff;strokeColor=#3700CC;fontStyle=1;fontColor=#ffffff;" value="Web Interface" vertex="1">
+          <mxGeometry height="1900" width="140" x="240" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-127" parent="dnjOWtYs_amgsTAoeb5Z-126" style="shape=umlActivation;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1">
+          <mxGeometry height="1120" width="16" x="62" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-128" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;dropTarget=0;fillColor=#60a917;strokeColor=#2D7600;fontStyle=1;fontColor=#ffffff;" value="Expense Controller" vertex="1">
+          <mxGeometry height="1900" width="170" x="470" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-129" parent="dnjOWtYs_amgsTAoeb5Z-128" style="shape=umlActivation;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1">
+          <mxGeometry height="1060" width="16" x="77" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-136" edge="1" parent="dnjOWtYs_amgsTAoeb5Z-128" source="dnjOWtYs_amgsTAoeb5Z-129" style="endArrow=block;html=1;strokeWidth=2;exitX=1.053;exitY=0.024;exitDx=0;exitDy=0;exitPerimeter=0;" value="3. Validate Session()">
+          <mxGeometry relative="1" x="-0.0705" y="-36" as="geometry">
+            <mxPoint x="37" y="1" as="offset" />
+            <Array as="points">
+              <mxPoint x="160" y="205" />
+              <mxPoint x="160" y="250" />
+            </Array>
+            <mxPoint x="120.00399999999988" y="249.95999999999992" as="sourcePoint" />
+            <mxPoint x="93" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-130" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;dropTarget=0;fillColor=#d80073;strokeColor=#A50040;fontStyle=1;fontColor=#ffffff;" value="Business Service" vertex="1">
+          <mxGeometry height="1900" width="160" x="740" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-131" parent="dnjOWtYs_amgsTAoeb5Z-130" style="shape=umlActivation;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1">
+          <mxGeometry height="970" width="16" x="72" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-169" edge="1" parent="dnjOWtYs_amgsTAoeb5Z-130" source="dnjOWtYs_amgsTAoeb5Z-130" style="endArrow=block;html=1;strokeWidth=2;entryX=0.937;entryY=0.229;entryDx=0;entryDy=0;entryPerimeter=0;" target="dnjOWtYs_amgsTAoeb5Z-131" value="7. Calculate Metrics()">
+          <mxGeometry relative="1" x="-0.0705" y="-36" as="geometry">
+            <mxPoint x="37" y="1" as="offset" />
+            <Array as="points">
+              <mxPoint x="167" y="440" />
+              <mxPoint x="167" y="485" />
+            </Array>
+            <mxPoint x="101" y="440" as="sourcePoint" />
+            <mxPoint x="100" y="485" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-141" edge="1" parent="dnjOWtYs_amgsTAoeb5Z-130" source="dnjOWtYs_amgsTAoeb5Z-131" style="endArrow=block;html=1;strokeWidth=2;exitX=1.063;exitY=0.269;exitDx=0;exitDy=0;exitPerimeter=0;elbow=vertical;entryX=1.125;entryY=0.314;entryDx=0;entryDy=0;entryPerimeter=0;" target="dnjOWtYs_amgsTAoeb5Z-131" value="8. Generate Charts &amp; Reports()">
+          <mxGeometry relative="1" x="-0.0215" y="30" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="160" y="520" />
+              <mxPoint x="160" y="565" />
+            </Array>
+            <mxPoint x="100" y="540" as="sourcePoint" />
+            <mxPoint x="100" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-132" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;dropTarget=0;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;" value="Database" vertex="1">
+          <mxGeometry height="1900" width="140" x="1010" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-133" parent="dnjOWtYs_amgsTAoeb5Z-132" style="shape=umlActivation;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;" vertex="1">
+          <mxGeometry height="900" width="16" x="62" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-134" edge="1" parent="1" style="endArrow=block;html=1;strokeWidth=2;" value="1. Select View Dashboard">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="270.55" y="180" />
+            </Array>
+            <mxPoint x="89.99736842105249" y="180" as="sourcePoint" />
+            <mxPoint x="300.05" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-135" edge="1" parent="1" style="endArrow=block;html=1;strokeWidth=2;" value="2. Request Dashboard Data()">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="322.61" y="220" />
+            </Array>
+            <mxPoint x="301.99888888888916" y="220.00000000000023" as="sourcePoint" />
+            <mxPoint x="547.11" y="220.00000000000023" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-137" edge="1" parent="1" style="endArrow=block;html=1;strokeWidth=2;" value="4. Generate Analytics()">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="745.61" y="310" />
+            </Array>
+            <mxPoint x="549.9988888888892" y="310.0000000000002" as="sourcePoint" />
+            <mxPoint x="815.11" y="310.0000000000002" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-138" edge="1" parent="1" style="endArrow=block;html=1;strokeWidth=2;entryX=-0.062;entryY=0.017;entryDx=0;entryDy=0;entryPerimeter=0;" target="dnjOWtYs_amgsTAoeb5Z-133" value="5. Fetch Expense Data()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="830" y="395" as="sourcePoint" />
+            <mxPoint x="1070.2499999999995" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-139" edge="1" parent="1" style="endArrow=open;dashed=1;html=1;entryX=0.937;entryY=0.129;entryDx=0;entryDy=0;entryPerimeter=0;" target="dnjOWtYs_amgsTAoeb5Z-131" value="6. Expense Records">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1070" y="430" as="sourcePoint" />
+            <mxPoint x="819.25" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-142" edge="1" parent="1" style="endArrow=open;dashed=1;html=1;" value="9. Dashboard Data">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="810" y="640" as="sourcePoint" />
+            <mxPoint x="550" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-143" edge="1" parent="1" style="endArrow=block;html=1;strokeWidth=2;" value="10. Render Dashboard()">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="353.27" y="680" />
+            </Array>
+            <mxPoint x="547.77" y="680" as="sourcePoint" />
+            <mxPoint x="303.00076923076927" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-144" edge="1" parent="1" style="endArrow=open;dashed=1;html=1;" value="11. Display Dashboard &amp; Reports">
+          <mxGeometry relative="1" x="0.0383" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="309.05" y="730" as="sourcePoint" />
+            <mxPoint x="98.99736842105249" y="730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-147" edge="1" parent="1" source="dnjOWtYs_amgsTAoeb5Z-131" style="endArrow=block;html=1;exitX=1.125;exitY=0.399;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.125;entryY=0.339;entryDx=0;entryDy=0;entryPerimeter=0;" target="dnjOWtYs_amgsTAoeb5Z-133" value="12. Aggregate Monthly Totals()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="810" y="700" as="sourcePoint" />
+            <mxPoint x="1070.2499999999995" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-148" edge="1" parent="1" style="endArrow=open;dashed=1;html=1;" value="13. Summary Data">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1079.4999999999998" y="740" as="sourcePoint" />
+            <mxPoint x="830" y="740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-149" edge="1" parent="1" style="endArrow=block;html=1;" value="14. Build Visualization Models()">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="770" y="800" />
+            </Array>
+            <mxPoint x="819.4999999999995" y="800" as="sourcePoint" />
+            <mxPoint x="560" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-150" edge="1" parent="1" style="endArrow=open;dashed=1;html=1;entryX=1.063;entryY=0.584;entryDx=0;entryDy=0;entryPerimeter=0;" value="15. No Expense Records Found">
+          <mxGeometry relative="1" x="0.0526" y="10" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="780" y="840" />
+            </Array>
+            <mxPoint x="819.4999999999995" y="840" as="sourcePoint" />
+            <mxPoint x="564.008" y="839.04" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-151" edge="1" parent="1" style="endArrow=block;html=1;entryX=0.938;entryY=0.597;entryDx=0;entryDy=0;entryPerimeter=0;" value="16. Show Empty State Message">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="350" y="881.36" />
+            </Array>
+            <mxPoint x="554.5000000000002" y="881.36" as="sourcePoint" />
+            <mxPoint x="317.00800000000004" y="880.0000000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-153" edge="1" parent="1" source="dnjOWtYs_amgsTAoeb5Z-125" style="endArrow=block;html=1;" target="dnjOWtYs_amgsTAoeb5Z-126" value="17. Click Export Report">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="280" y="920" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-154" edge="1" parent="1" style="endArrow=block;html=1;" value="18. ExportReport(format)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="301.9973684210525" y="980" as="sourcePoint" />
+            <mxPoint x="547.0500000000002" y="980" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-155" edge="1" parent="1" style="endArrow=block;html=1;" value="19. Generate PDF/Excel">
+          <mxGeometry relative="1" x="0.0983" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="559.9973684210524" y="1010" as="sourcePoint" />
+            <mxPoint x="819.4999999999995" y="1010" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-156" edge="1" parent="1" source="dnjOWtYs_amgsTAoeb5Z-131" style="endArrow=open;dashed=1;html=1;entryX=0.938;entryY=0.792;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.125;exitY=0.763;exitDx=0;exitDy=0;exitPerimeter=0;" target="dnjOWtYs_amgsTAoeb5Z-127" value="20. Export File">
+          <mxGeometry relative="1" x="-0.2997" y="3" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="650" y="1037" />
+            </Array>
+            <mxPoint x="819.4999999999995" y="1050" as="sourcePoint" />
+            <mxPoint x="309.25" y="1050" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dnjOWtYs_amgsTAoeb5Z-157" edge="1" parent="1" style="endArrow=open;dashed=1;html=1;" value="21. Download File">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="309.5" y="1080" as="sourcePoint" />
+            <mxPoint x="99.44736842105249" y="1080" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
